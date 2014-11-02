@@ -25,6 +25,8 @@ Through Command Palette, find `MultiRubyEval: evaluate selections`
 
 Enter a ruby expression, where the variable `x` will contain the selection as a string. To also evaluate the selection itself as a ruby expression, use `eval(x)`.
 
+Note: Currently, MultiRubyEval does not handle newlines, so each selection's input and output must reside on one line.
+
 
 Examples
 --------
