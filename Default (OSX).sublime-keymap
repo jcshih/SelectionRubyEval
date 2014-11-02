@@ -1,3 +1,3 @@
 [
-  { "keys": ["super+shift+e"], "command": "multi_ruby_eval" }
+  { "keys": ["super+shift+r"], "command": "multi_ruby_eval" }
 ]

@@ -17,9 +17,9 @@ Usage
 
 Default key bindings:
 
-- OSX: <kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>e</kbd>
-- Linux: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>e</kbd>
-- Windows: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>e</kbd>
+- OSX: <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>r</kbd>
+- Linux: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>r</kbd>
+- Windows: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>r</kbd>
 
 Through Command Palette, find `MultiRubyEval: evaluate selections`
 
