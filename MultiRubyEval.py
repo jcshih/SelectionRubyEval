@@ -43,7 +43,7 @@ class MultiRubyEvalReplaceSel(sublime_plugin.TextCommand):
 
     def display_error(self, err):
         panel = self.view.window().get_output_panel("stderr")
-        panel.run_command("append", { "characters": err })
+        panel.run_command("insert", { "characters": err })
         self.view.window().run_command("show_panel", { "panel": "output.stderr" })
 
 def eval_ruby(expr, inputs):
