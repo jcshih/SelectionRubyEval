@@ -24,7 +24,7 @@ class MultiRubyEvalReplaceSel(sublime_plugin.TextCommand):
         sel_str = [self.view.substr(s) for s in sel]
         expr = expr.replace('"', '\\"').replace("'", "\\'")
 
-        res = eval_ruby(sel_str, expr)
+        res = eval_ruby(expr, sel_str)
         if res.returncode == 0:
             self.replace_selections(edit, sel, res.stdout.split('\n'))
         else:
@@ -42,11 +42,11 @@ class MultiRubyEvalReplaceSel(sublime_plugin.TextCommand):
 
     def display_error(self, err):
         panel = self.view.window().get_output_panel("stderr")
-        panel.run_command("append", {"characters": err})
-        self.view.window().run_command("show_panel", {"panel": "output.stderr"})
+        panel.run_command("append", { "characters": err })
+        self.view.window().run_command("show_panel", { "panel": "output.stderr" })
 
-def eval_ruby(inputs, expr):
-    cmd = ["ruby", "-e", ruby_script.format(inputs=inputs, expr=expr)]
+def eval_ruby(expr, inputs):
+    cmd = get_ruby() + ["-e", ruby_script.format(inputs=inputs, expr=expr)]
     p = Popen(cmd, stdout=PIPE, stderr=PIPE)
     out, err = p.communicate()
     return Result(
@@ -54,3 +54,6 @@ def eval_ruby(inputs, expr):
         stdout=out.decode('utf-8').strip(),
         stderr=err.decode('utf-8').strip()
     )
+
+def get_ruby():
+    return ["ruby"]
