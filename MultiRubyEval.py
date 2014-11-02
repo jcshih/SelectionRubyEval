@@ -21,8 +21,9 @@ class MultiRubyEvalCommand(sublime_plugin.WindowCommand):
 class MultiRubyEvalReplaceSel(sublime_plugin.TextCommand):
     def run(self, edit, expr=''):
         sel = self.get_selections()
-        sel_str = [self.view.substr(s) for s in sel]
-        expr = expr.replace('"', '\\"').replace("'", "\\'")
+        sel_str = ['"'+escape_quotes(self.view.substr(s))+'"' for s in sel]
+        sel_str = '['+', '.join(sel_str)+']'
+        expr = escape_quotes(expr)
 
         res = eval_ruby(expr, sel_str)
         if res.returncode == 0:
@@ -57,3 +58,6 @@ def eval_ruby(expr, inputs):
 
 def get_ruby():
     return ["ruby"]
+
+def escape_quotes(s):
+    return s.replace('"', '\\"').replace("'", "\\'")
