@@ -31,8 +31,8 @@ Note: Currently, MultiRubyEval does not handle newlines, so each selection's inp
 Examples
 --------
 
-[[ex1.gif]]
+![](https://raw.githubusercontent.com/wiki/jcshih/MultiRubyEval/ex1.gif)
 
-[[ex2.gif]]
+![](https://raw.githubusercontent.com/wiki/jcshih/MultiRubyEval/ex2.gif)
 
-[[ex3.gif]]
+![](https://raw.githubusercontent.com/wiki/jcshih/MultiRubyEval/ex3.gif)
