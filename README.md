@@ -31,4 +31,8 @@ Note: Currently, MultiRubyEval does not handle newlines, so each selection's inp
 Examples
 --------
 
+[[ex1.gif]]
 
+[[ex2.gif]]
+
+[[ex3.gif]]
