@@ -27,7 +27,7 @@ class MultiRubyEvalReplaceSel(sublime_plugin.TextCommand):
 
         res = eval_ruby(expr, sel_str)
         if res.returncode == 0:
-            self.replace_selections(edit, sel, res.stdout.split('\n'))
+            self.replace_selections(edit, reversed(sel), reversed(res.stdout.split('\n')))
         else:
             self.display_error(res.stderr)
 

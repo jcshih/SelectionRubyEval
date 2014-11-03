@@ -23,7 +23,7 @@ Default key bindings:
 
 Through Command Palette, find `MultiRubyEval: evaluate selections`
 
-Enter a ruby expression, where the variable `x` will contain the selection as a string. To also evaluate the selection itself as a ruby expression, use `eval(x)`.
+Enter a ruby expression, where the variable `x` will contain the selection as a string. To also evaluate the selection itself as a ruby expression, use `eval(x)`. Outputs are treated as string also, so if the result of an expression is a ruby structure, you can use `#to_s` to get its string representation.
 
 Note: Currently, MultiRubyEval does not handle newlines, so each selection's input and output must reside on one line.
 
