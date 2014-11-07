@@ -10,15 +10,15 @@ memo_eval = Hash.new {{ |h, k| h[k] = eval "{expr}", get_binding(k) }}
 {inputs}.each {{ |x| puts memo_eval[x] }}
 """
 
-class MultiRubyEvalCommand(sublime_plugin.WindowCommand):
+class SelectionRubyEvalCommand(sublime_plugin.WindowCommand):
     def run(self):
         self.window.show_input_panel("Enter expression", "", self.done, None, None)
 
     def done(self, expr):
         view = self.window.active_view()
-        view.run_command("multi_ruby_eval_replace_sel", { "expr": expr })
+        view.run_command("selection_ruby_eval_replace_sel", { "expr": expr })
 
-class MultiRubyEvalReplaceSel(sublime_plugin.TextCommand):
+class SelectionRubyEvalReplaceSel(sublime_plugin.TextCommand):
     def run(self, edit, expr=''):
         sel = self.get_selections()
         sel_str = ['"'+escape_quotes(self.view.substr(s))+'"' for s in sel]
